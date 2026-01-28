@@ -3,724 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNS集客の最適化とインフルエンサー活用ガイド</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>店舗向けご提案資料 - 16:9横長版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Arial, sans-serif;
-            line-height: 1.8;
-            background-image: url('denim-bg (1).jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 25%, rgba(58, 134, 255, 0.85) 50%, rgba(96, 165, 250, 0.85) 75%, rgba(30, 60, 114, 0.85) 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            z-index: -1;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
+        /* 16:9 の比率を維持するコンテナ設定 */
+        .slide-container {
+            width: 90vw;
+            aspect-ratio: 16 / 9;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 2.5em;
-            background: linear-gradient(45deg, #1e3c72 0%, #2a5298 25%, #3a86ff 50%, #60a5fa 75%, #1e88e5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .subtitle {
-            font-size: 1.3em;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .social-icon {
-            font-size: 3em;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .instagram {
-            background: linear-gradient(45deg, #1e3c72 0%, #2a5298 25%, #3a86ff 50%, #60a5fa 75%, #1e88e5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tiktok {
-            color: #1e3c72;
-        }
-
-        section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 50px 40px;
-            margin-bottom: 40px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            font-size: 2em;
-            color: #1e3c72;
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 6px solid;
-            border-image: linear-gradient(45deg, #1e3c72, #3a86ff, #60a5fa) 1;
-            animation: slideInLeft 0.8s ease;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        h3 {
-            font-size: 1.5em;
-            color: #2a5298;
-            margin: 25px 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h3 i {
-            color: #3a86ff;
-        }
-
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin: 15px 0;
-            line-height: 1.8;
-        }
-
-        strong {
-            color: #1e3c72;
-            font-weight: 600;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #1e3c72 0%, #3a86ff 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(30, 60, 114, 0.4);
-        }
-
-        .card h3 {
-            color: white;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            justify-content: center;
-        }
-
-        .card p {
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        th {
-            background: linear-gradient(135deg, #1e3c72 0%, #3a86ff 100%);
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background-color: #f0f7ff;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin: 25px 0;
-            border-left: 5px solid #1e88e5;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .points-list {
-            counter-reset: point-counter;
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .points-list li {
-            counter-increment: point-counter;
-            padding-left: 50px;
-            position: relative;
-            margin: 25px 0;
-        }
-
-        .points-list li::before {
-            content: counter(point-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: linear-gradient(135deg, #1e3c72, #3a86ff);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #1e3c72 0%, #3a86ff 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 40px;
-        }
-
-        .cta-section h2 {
-            color: white;
-            border-left: none;
-            padding-left: 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #1e3c72;
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-top: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            background: #e3f2fd;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: white;
-            font-size: 0.95em;
-        }
-
-        .floating-icons {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
+            background-color: white;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            z-index: 1000;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
         }
-
-        .floating-icon {
-            width: 50px;
+        .bg-custom-blue { background-color: #1e3a8a; }
+        .text-custom-blue { color: #1e3a8a; }
+        .bg-light-blue { background-color: #f0f7ff; }
+        .bg-light-red { background-color: #fff8f8; }
+        
+        .header-container {
             height: 50px;
-            border-radius: 50%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            background-color: #1e3a8a;
             color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 0 1.5rem;
         }
 
-        .floating-icon:hover {
-            transform: scale(1.2);
+        .header-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            background-color: #fff;
         }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1e3c72, #3a86ff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(30, 60, 114, 0.4);
+        .profit-value {
+            display: inline-block;
+            white-space: nowrap;
+            min-width: 140px; 
+            text-align: left;
+            font-size: 11px;
         }
 
-        .scroll-to-top.visible {
-            opacity: 1;
+        .simulation-table td {
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
         }
 
-        .scroll-to-top:hover {
-            transform: scale(1.1) rotate(360deg);
+        h2 { font-size: 1rem !important; }
+        .section-tag { width: 1.5rem; height: 1.5rem; font-size: 0.8rem; }
+
+        /* 中括弧（回転版）のデザイン */
+        .brace-container {
+            position: relative;
+            height: 10px;
+            width: 80%;
+            margin: 0 auto;
+            border-left: 2px solid #cbd5e1;
+            border-right: 2px solid #cbd5e1;
+            border-bottom: 2px solid #cbd5e1;
+            border-radius: 0 0 8px 8px;
+        }
+        .brace-point {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 6px;
+            background-color: #cbd5e1;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            section {
-                padding: 30px 20px;
-            }
-
-            .floating-icons {
-                right: 15px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-
-            table {
-                font-size: 0.9em;
-            }
-
-            th, td {
-                padding: 12px;
-            }
-        }
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 5px;
-            background: linear-gradient(90deg, #1e3c72, #3a86ff, #60a5fa);
-            z-index: 9999;
-            transition: width 0.1s ease;
-        }
-
-        /* 警告ボックスのスタイル調整（青ベース） */
-        #cautions .highlight-box {
-            border-left: 5px solid #1565c0;
-            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
-        }
-
-        #cautions .highlight-box p:last-child {
-            color: #0d47a1;
-            font-weight: 600;
-            margin-top: 10px;
+        .closing-text {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #1e293b;
+            text-align: center;
+            margin-top: auto;
+            padding-bottom: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="progress-bar" id="progressBar"></div>
 
-    <div class="floating-icons">
-        <div class="floating-icon" style="background: linear-gradient(45deg, #1e3c72, #3a86ff);">
-            <i class="fab fa-instagram"></i>
-        </div>
-        <div class="floating-icon" style="background: #1e3c72;">
-            <i class="fab fa-tiktok"></i>
-        </div>
-    </div>
-
-    <div class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <div class="container">
-        <header>
-            <h1>店舗向け:SNS集客の最適化と<br>インフルエンサー活用ガイド</h1>
-            <p class="subtitle">～「単発」で終わらせないSNSマーケティング戦略～</p>
-            <div class="social-icons">
-                <i class="fab fa-instagram social-icon instagram"></i>
-                <i class="fab fa-tiktok social-icon tiktok"></i>
+    <div class="slide-container">
+        <header class="header-container shrink-0">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-file-invoice-dollar text-lg"></i>
+                <h1 class="text-sm font-black tracking-wider uppercase">店舗様向け ご提案資料</h1>
             </div>
+            <img src="image.jpg" alt="Icon" class="header-image" onerror="this.src='https://via.placeholder.com/64?text=ICON'">
         </header>
 
-        <section id="intro">
-            <h2><i class="fas fa-exclamation-circle"></i> はじめに:SNS集客で「損」をしていませんか?</h2>
-            
-            <h3><i class="fas fa-chart-line"></i> 現状の課題:</h3>
-            <ul>
-                <li>「広告費をかけても、その場限りの集客で終わってしまう」</li>
-                <li>「SNSが良いのは分かっているが、誰にどう頼めばいいか迷う」</li>
-            </ul>
-
-            <h3><i class="fas fa-users"></i> 今のユーザー心理:</h3>
-            <p>ユーザーは<strong>「作られた広告」</strong>よりも、信頼する個人の<strong>「嘘のない推奨」</strong>を求めています。</p>
-
-            <div class="highlight-box">
-                <h3><i class="fas fa-bullseye"></i> 本資料の目的:</h3>
-                <p>フォロワー1,000人を達成する過程で、私が肌で感じた「ユーザーのリアルな反応」をもとに、<strong>お店が納得感を持って取り組めるSNS活用</strong>をご提案します。</p>
-            </div>
-        </section>
-
-        <section id="types">
-            <h2><i class="fas fa-star"></i> インフルエンサーマーケティング 5つの型</h2>
-            <p>目的に合わせて、最適なアプローチを選びましょう。</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3><i class="fas fa-gift"></i> 商品提供・サービス体験型</h3>
-                    <p>看板メニューの認知を広める第一歩。</p>
+        <main class="flex-1 flex overflow-hidden">
+            <!-- 左カラム: 01 前提データ -->
+            <section class="w-2/5 p-6 border-r border-slate-100 flex flex-col gap-4 overflow-y-auto">
+                <div class="flex items-center gap-2 border-b-2 border-custom-blue pb-1">
+                    <span class="bg-custom-blue text-white rounded-full section-tag flex items-center justify-center font-bold">01</span>
+                    <h2 class="font-bold text-custom-blue">前提データ（現在）</h2>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-map-marker-alt"></i> 現地訪問型</h3>
-                    <p>お店の雰囲気や接客を含めた「体験」をPRする、飲食店に最も効果的な手法。</p>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="border rounded-lg p-3 bg-white shadow-sm border-slate-100">
+                        <div class="flex items-center gap-1 mb-1 text-pink-600">
+                            <i class="fab fa-instagram"></i>
+                            <span class="font-bold text-[10px]">Instagram</span>
+                        </div>
+                        <p class="text-[9px] text-slate-500">フォロワー：約1,000人</p>
+                        <p class="text-[10px] font-bold text-slate-700 mt-1">1投稿リーチ：</p>
+                        <p class="text-[16px] font-black text-slate-800 leading-none">500〜1,000</p>
+                    </div>
+                    <div class="border rounded-lg p-3 bg-white shadow-sm border-slate-100">
+                        <div class="flex items-center gap-1 mb-1 text-slate-900">
+                            <i class="fab fa-tiktok"></i>
+                            <span class="font-bold text-[10px]">TikTok</span>
+                        </div>
+                        <p class="text-[9px] text-slate-500">フォロワー：約50人</p>
+                        <p class="text-[10px] font-bold text-slate-700 mt-1">1投稿リーチ：</p>
+                        <p class="text-[16px] font-black text-slate-800 leading-none">1,000以上</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-lightbulb"></i> 監修・コンサルティング型</h3>
-                    <p>インフルエンサーの視点を取り入れたメニュー開発で、話題性を作る。</p>
+
+                <div class="flex flex-col items-center -mt-2">
+                    <div class="brace-container">
+                        <div class="brace-point"></div>
+                    </div>
+                    <p class="text-[8px] text-slate-400 font-bold mt-2">InstagramとTikTokの数値を合わせた合計です</p>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-video"></i> ライブ配信型</h3>
-                    <p>リアルタイムで魅力を伝え、即時の予約や来店につなげる。</p>
+
+                <div class="bg-light-blue rounded-lg py-3 text-center border border-blue-100">
+                    <p class="text-custom-blue font-bold text-[10px]">合計想定リーチ数</p>
+                    <div class="text-3xl font-black text-custom-blue">
+                        1,500&emsp;〜&emsp;2,000 <span class="text-sm">人</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-handshake"></i> コラボレーション型</h3>
-                    <p>継続的な発信で、お店の「ファン(アンバサダー)」になってもらう。</p>
+
+                <div class="text-[10px] bg-slate-50 p-3 rounded-lg">
+                    <p class="font-black text-slate-800 mb-1">■PR後 想定来店数の算出について</p>
+                    <p class="text-slate-600 leading-relaxed">
+                        投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、
+                        実際に来店に至る割合は<span class="text-red-500 font-bold">約0.1〜0.3%</span>と想定。
+                    </p>
+                    <div class="mt-2 space-y-0.5 opacity-70">
+                        <p class="text-[8px] text-slate-500 font-bold">※SNSマーケティングの一般的指標を参考に算出しております。</p>
+                        <p class="text-[8px] text-slate-500 font-bold">※リーチ数がご不安な際は詳細データを提出いたします。</p>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="methods">
-            <h2><i class="fas fa-clipboard-list"></i> インフルエンサーへの依頼方法と特徴</h2>
-            <p>どの方法がお店にとって最適か、一緒に検討していきましょう。</p>
+                <div class="border-2 border-red-50 rounded-lg py-4 text-center bg-light-red">
+                    <p class="text-[11px] font-bold text-orange-900">PR後 想定来店数</p>
+                    <div class="text-4xl font-black text-red-500 mt-1">2〜6 <span class="text-xl">名</span></div>
+                </div>
+            </section>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>依頼方法</th>
-                        <th>メリット</th>
-                        <th>注意点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>代理店・事務所</strong></td>
-                        <td>手間がかからない</td>
-                        <td>コストが割高になり、現場の細かな要望が伝わりにくいことも。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>マッチングツール</strong></td>
-                        <td>効率的に探せる</td>
-                        <td>相手の「質」を見抜く目利きが、お店側に求められます。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>直接依頼</strong></td>
-                        <td><strong>低コスト・柔軟</strong></td>
-                        <td><strong>交渉やスケジュール管理に、多くの時間と労力がかかります。</strong></td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- 右カラム: 02 & 03 -->
+            <section class="w-3/5 p-6 flex flex-col gap-6 overflow-y-auto">
+                <!-- 02 店舗側コスト -->
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 border-b-2 border-custom-blue pb-1">
+                        <span class="bg-custom-blue text-white rounded-full section-tag flex items-center justify-center font-bold">02</span>
+                        <h2 class="font-bold text-custom-blue">店舗側コスト</h2>
+                    </div>
+                    <div class="flex justify-between items-start text-[11px] px-2">
+                        <div class="space-y-2 text-slate-700">
+                            <p><i class="fas fa-check-circle text-custom-blue mr-1"></i> PR訪問人数：2名（同伴1名希望）</p>
+                            <p><i class="fas fa-check-circle text-custom-blue mr-1"></i> 謝礼金額：1,000〜3,000円（ご相談）</p>
+                            <p><i class="fas fa-check-circle text-custom-blue mr-1"></i> 原価想定：1,200円/人 <span class="text-[9px] text-slate-400">※客単価4,000円 原価30%</span></p>
+                        </div>
+                        <div class="bg-white border rounded-lg p-3 text-slate-800 shadow-sm min-w-[180px]">
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+                                <span>原価負担(2名)</span><span class="text-right">2,400円</span>
+                                <span class="font-bold">有償PR謝礼</span><span class="text-right text-red-500 font-bold">1,000〜3,000円</span>
+                                <hr class="col-span-2 my-1">
+                                <span class="font-black">総コスト</span><span class="text-right text-red-500 font-black">3,400〜5,400円</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="highlight-box">
-                <p><i class="fas fa-info-circle"></i> <strong>私の立ち位置:</strong> 直接依頼の際、「この方に頼んで本当に大丈夫そうか」を店舗様と一緒に考えます。質の高いインフルエンサーを選別する手助け・協力をさせていただきます。</p>
-            </div>
-        </section>
+                <!-- 03 シミュレーション -->
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 border-b-2 border-custom-blue pb-1">
+                        <span class="bg-custom-blue text-white rounded-full section-tag flex items-center justify-center font-bold">03</span>
+                        <div class="flex items-baseline gap-2">
+                            <h2 class="font-bold text-custom-blue">PR後の来店・売上シミュレーション</h2>
+                            <span class="text-[9px] text-slate-500 font-bold">※客単価4,000円で試算</span>
+                        </div>
+                    </div>
 
-        <section id="pricing">
-            <h2><i class="fas fa-yen-sign"></i> 費用相場の目安とフォロワー単価</h2>
-            
-            <ul>
-                <li><strong>一般的な相場:</strong> フォロワー1人あたり <strong>2円〜5円</strong>が目安です。</li>
-                <li><strong>予算の考え方:</strong>
-                    <ul>
-                        <li>費用を抑えたい場合は、食事提供のみで受けてくれる「熱意あるマイクロインフルエンサー」を複数起用する戦略もあります。</li>
-                        <li>「ただフォロワーが多いだけ」ではなく、お店のエリアやジャンルに合った方を選ぶことが、費用対効果を高める鍵になります。</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+                    <div class="overflow-hidden rounded-lg border border-slate-200">
+                        <table class="w-full text-[10px] simulation-table">
+                            <thead class="bg-custom-blue text-white text-center">
+                                <tr class="h-8">
+                                    <th class="border-r border-blue-800 w-[15%]">来店人数</th>
+                                    <th class="border-r border-blue-800 w-[20%]">売上</th>
+                                    <th>利益（売上 - 総コスト）</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white">
+                                <tr class="border-b border-slate-100 text-center bg-blue-50/20">
+                                    <td class="font-bold border-r">1名</td>
+                                    <td class="border-r font-black">4,000円</td>
+                                    <td class="text-left pl-4">
+                                        <span class="profit-value font-black text-slate-800"><span class="text-red-500">-1,400</span> 〜 <span class="text-blue-600">+600円</span></span>
+                                        <span class="text-[8px] border border-slate-800 px-1 rounded font-bold align-middle">謝礼1,000円で回収ライン</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 text-center">
+                                    <td class="font-bold border-r">2名</td>
+                                    <td class="border-r font-black">8,000円</td>
+                                    <td class="text-left pl-4">
+                                        <span class="profit-value font-black text-blue-600">+2,600 〜 +4,600円</span>
+                                        <span class="text-[8px] text-blue-600 font-bold">★黒字化ライン</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 text-center text-blue-600 font-black">
+                                    <td class="border-r text-slate-800 font-bold">4名</td>
+                                    <td class="border-r text-slate-800">16,000円</td>
+                                    <td class="text-left pl-4"><span class="profit-value">+10,600 〜 +12,600円</span></td>
+                                </tr>
+                                <tr class="bg-blue-50/30 text-center text-blue-600 font-black">
+                                    <td class="border-r text-slate-800 font-bold">6名</td>
+                                    <td class="border-r text-slate-800">24,000円</td>
+                                    <td class="text-left pl-4"><span class="profit-value">+18,600 〜 +20,600円</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-        <section id="points">
-            <h2><i class="fas fa-check-circle"></i> 依頼時に大切にしたい「7つのポイント」</h2>
+                    <div class="bg-light-blue p-3 rounded-lg border border-blue-100 text-[9px] leading-relaxed flex flex-col gap-1">
+                        <p>・PR後想定来店数を基に2名の来店で黒字化となる想定で試算しております。</p>
+                        <p class="text-slate-800">・謝礼1,000円の場合、来店1名でコスト回収の想定です。</p>
+                        <p>・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
+                    </div>
+                </div>
 
-            <ol class="points-list">
-                <li><strong>フォロワー属性の確認:</strong> お店に来られるエリアの方がフォロワーに多いかを確認します。</li>
-                <li><strong>SNS媒体の選定:</strong> インスタ、TikTok、Xなど、ターゲットに合う場所を選びましょう。</li>
-                <li><strong>目標(KPI)の設定:</strong> 「リーチ数」だけでなく、「保存数」や「地図のクリック数」を重視します。</li>
-                <li><strong>クリエイティブの尊重:</strong> インフルエンサー独自の表現を信頼することで、広告臭が抑えられ、ユーザーに届きやすくなります。</li>
-                <li><strong>ネタの提供:</strong> インフルエンサーが紹介しやすくなる「お店のこだわり」や「秘話」を伝えます。</li>
-                <li><strong>施策の掛け合わせ:</strong> 投稿を見て来店された方への「特典」など、最後の一押しを設計します。</li>
-                <li><strong>効果の分析:</strong> 投稿後の数値をしっかり確認し、次回の改善に役立てましょう。</li>
-            </ol>
-
-            <div class="highlight-box">
-                <p><i class="fas fa-chart-bar"></i> <strong>数値の見方:</strong> フォロワー数に対する「いいね率」や「コメント数」を重視しましょう。やり取りが活発なほどアルゴリズム上おすすめに乗りやすくなり、再投稿(シェア)の数も拡散の重要指標となります。</p>
-            </div>
-        </section>
-
-        <section id="cautions">
-            <h2><i class="fas fa-shield-alt"></i> 依頼時の注意点:お店の信頼を守るために</h2>
-
-            <h3><i class="fas fa-user-secret"></i> フォロワー買いへの注意:</h3>
-            <p>数字だけの見せかけではないか、エンゲージメント(反応)がしっかりあるかを見極めることが大切です。</p>
-
-            <div class="highlight-box">
-                <h3><i class="fas fa-balance-scale"></i> ステマ対策の徹底(景品表示法違反):</h3>
-                <p><strong>広告であることを明記(「#PR」など)することは、お店のブランドと信頼を守るために必須です。</strong></p>
-                <p>⚠️ 守っていただかないと、最悪の場合、店舗側の責任になります。</p>
-            </div>
-
-            <h3><i class="fas fa-file-contract"></i> 事前の刷り合わせ:</h3>
-            <p>投稿内容のイメージ、スケジュール、費用の有無などを事前に書面やチャットで明確にしておきましょう。</p>
-        </section>
-
-        <section id="influencer-voice">
-            <h2><i class="fas fa-comments"></i> インフルエンサーの本音:紹介したくなるお店とは</h2>
-
-            <h3><i class="fas fa-thumbs-up"></i> 前向きになれるお店:</h3>
-            <ul>
-                <li>メッセージのやり取りが丁寧で、お店の想いが伝わってくる。</li>
-                <li>撮影環境(照明が明るい、スペースの確保など)への配慮がある。</li>
-            </ul>
-
-            <h3><i class="fas fa-ban"></i> 依頼を断られるケース:</h3>
-            <ul>
-                <li>やり取りが不愛想、または指示が細かすぎて自分の世界観で紹介できない。</li>
-                <li>店内が暗すぎて料理の魅力が伝わらない、撮影への理解がスタッフ間で共有されていない。</li>
-            </ul>
-        </section>
-
-        <section id="support">
-            <h2><i class="fas fa-hands-helping"></i> 私が手助けできること(サポート内容)</h2>
-
-            <ol class="points-list">
-                <li><strong>インフルエンサーの選別:</strong> お店に合う、誠実で影響力のある方を探すお手伝いをします。</li>
-                <li><strong>店舗SNSの運用サポート:</strong> インフルエンサーの投稿を参考に、お店自身でもリールやフィード投稿を行い、集客を加速させるアドバイスをします。</li>
-                <li><strong>動画・投稿作成のアドバイス:</strong> 魅力的に見える動画の撮り方や、投稿作成の手順を分かりやすく解説します。</li>
-                <li><strong>分析と今後の方針相談:</strong> 必要に応じて活動の数値を振り返り、次の一手を一緒に考えます(※別途条件相談)。</li>
-            </ol>
-        </section>
-
-        <section class="cta-section" id="conclusion">
-            <h2><i class="fas fa-heart"></i> 結び</h2>
-            
-            <p>インフルエンサーの活用は、単なる「広告」ではなく、お店の魅力を「信頼」に変えて届ける手段です。</p>
-            
-            <p>「とにかく有名人に頼めばいい」というわけではなく、お店の現状(認知、新規獲得、リピートなど)に合わせた活用方法を考える必要があります。</p>
-            
-            <p><strong>「今、お店にとって本当に必要なことは何か」</strong></p>
-            
-            <p>それを整理し、最適な形でインフルエンサーとの橋渡しをする。その手助けを誠心誠意サポートさせていただきます。</p>
-            
-            <p style="margin-top: 30px; font-size: 1.1em; line-height: 2;">貴店のその時々の悩み、現状を一緒に話しながら、依頼されて店舗PRする側の意見も共有しつつ、<br>二人三脚で良い形で協業、ご支援させていただけると幸いです。</p>
-            
-            <a href="#intro" class="cta-button"><i class="fas fa-rocket"></i> 今すぐ始める</a>
-        </section>
-
-        <footer>
-            <p><i class="fas fa-copyright"></i> 2026 SNS集客最適化ガイド - All Rights Reserved</p>
-            <p>お問い合わせ・ご相談はお気軽にどうぞ</p>
-        </footer>
+                <div class="closing-text">
+                    何卒、ご検討のほどよろしくお願い申し上げます。
+                </div>
+            </section>
+        </main>
     </div>
-
-    <script>
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // プログレスバー
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-        });
-
-        // トップへ戻るボタン
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // ソーシャルアイコンのアニメーション
-        document.querySelectorAll('.social-icon, .floating-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                icon.style.animation = 'none';
-                setTimeout(() => {
-                    icon.style.animation = '';
-                }, 10);
-            });
-        });
-
-        // カードのクリックアニメーション
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
-
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
