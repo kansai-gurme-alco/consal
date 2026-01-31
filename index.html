@@ -5,6 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>関西グルメ あるこ｜店舗PR</title>
 
+<!-- 追加したやーつ　-->
+    <script>
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      // バーを伸ばす
+      entry.target.querySelectorAll('.bar').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+
+      // 数字カウントアップ
+      entry.target.querySelectorAll('.count').forEach(el => {
+        const target = parseFloat(el.dataset.target);
+        let current = 0;
+        const step = target / 40;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          } else {
+            el.textContent = current.toFixed(1);
+          }
+        }, 30);
+      });
+
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.card').forEach(card => {
+  if (card.querySelector('.bar')) {
+    barObserver.observe(card);
+  }
+});
+</script>
+    
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
