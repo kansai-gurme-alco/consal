@@ -51,6 +51,9 @@ document.querySelectorAll('.card').forEach(card => {
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<!-- 円グラフ用ライブラリ（Chart.js） -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
 body {
 color: #1f2a44;
@@ -461,6 +464,34 @@ instaとtiktokにて投稿後約10日間で...
 <div class="card">
 <h2 class="section-title text-base md:text-lg">フォロワー属性</h2>
 
+<!-- 性別分布 円グラフ -->
+<div class="mt-6">
+  <p class="text-sm md:text-base font-bold text-center mb-2">全体の性別分布</p>
+  <canvas id="genderChart" height="200"></canvas>
+  <p class="text-xs text-center mt-2">
+    男性 <strong>68.7%</strong> ／ 女性 <strong>31.3%</strong>
+  </p>
+</div>
+
+<!-- 年齢分布 円グラフ -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div>
+    <p class="text-sm md:text-base font-bold text-center mb-2">男性 年齢分布</p>
+    <canvas id="maleAgeChart" height="200"></canvas>
+    <p class="text-xs text-center mt-2">
+      25–34歳 32.1% ／ 35–44歳 21.1% ／ 45–54歳 27.3%
+    </p>
+  </div>
+
+  <div>
+    <p class="text-sm md:text-base font-bold text-center mb-2">女性 年齢分布</p>
+    <canvas id="femaleAgeChart" height="200"></canvas>
+    <p class="text-xs text-center mt-2">
+      25–34歳 41.1% ／ 35–44歳 28.6% ／ 45–54歳 13.0%
+    </p>
+  </div>
+</div>
+
 <!-- 男性 -->
 <p class="text-sm md:text-base font-bold mt-4">男性フォロワー</p>
 
@@ -707,6 +738,64 @@ block: 'start'
 }
 });
 });
+
+// 円グラフ描画（IntersectionObserverで表示時に動かす）
+const chartObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      // 性別分布
+      new Chart(document.getElementById('genderChart'), {
+        type: 'pie',
+        data: {
+          labels: ['男性', '女性'],
+          datasets: [{
+            data: [68.7, 31.3],
+            backgroundColor: ['#6366f1', '#ec4899']
+          }]
+        },
+        options: {
+          animation: { duration: 1200 }
+        }
+      });
+
+      // 男性 年齢分布
+      new Chart(document.getElementById('maleAgeChart'), {
+        type: 'pie',
+        data: {
+          labels: ['25–34歳', '35–44歳', '45–54歳', 'その他'],
+          datasets: [{
+            data: [32.1, 21.1, 27.3, 19.5],
+            backgroundColor: ['#6366f1', '#818cf8', '#a5b4fc', '#e5e7eb']
+          }]
+        },
+        options: {
+          animation: { duration: 1200 }
+        }
+      });
+
+      // 女性 年齢分布
+      new Chart(document.getElementById('femaleAgeChart'), {
+        type: 'pie',
+        data: {
+          labels: ['25–34歳', '35–44歳', '45–54歳', 'その他'],
+          datasets: [{
+            data: [41.1, 28.6, 13.0, 17.3],
+            backgroundColor: ['#ec4899', '#f472b6', '#f9a8d4', '#e5e7eb']
+          }]
+        },
+        options: {
+          animation: { duration: 1200 }
+        }
+      });
+
+      chartObserver.disconnect();
+    }
+  });
+}, { threshold: 0.4 });
+
+chartObserver.observe(document.getElementById('genderChart'));
+
 </script>
 
 </body>
